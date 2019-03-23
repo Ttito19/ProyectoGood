@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/tabDialog.html?dialog=loginSimple -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Log In</title>
+
+<link rel="stylesheet" type="text/css" href="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/newvaultGlobal.css">
+<link rel="stylesheet" type="text/css" href="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/buttons.css">
+<link rel="stylesheet" type="text/css" href="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/dialog.css">
+<link rel="stylesheet" type="text/css" href="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/notifications.css">
+<link rel="stylesheet" type="text/css" href="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/tabDialog.css">
+<link rel="stylesheet" type="text/css" href="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/fonts/fontawesome.min.css">
+</head>
+
+<body class="tab login-background dialogState">
+
+<div id="contextMenu" class="contextMenu dropdownMenu">
+  <ul></ul>
+</div>
+
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/topics.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/platform.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/vaultStrings.js"></script>
+
+<!-- This file is platform specific -->
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/platformOverride.js"></script>
+
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/buildVars.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/controller.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/tools.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/features.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/dialog.js"></script><div id="dialogLoadingOverlay" class="overlay"></div><div id="dialogOverlay" class="overlay"></div>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/dialogFields.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/dialogs.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/vaultDialogs.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/tabDialog.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/model.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/view.js"></script><div id="dragElement"></div>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/notifications.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/request.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/interfaces.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/tabDialogInterface.js"></script>
+<script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/initializeTab.js"></script><script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/platformRequestFramework.js"></script>
+
+
+
+
+<div class="notification" id="errorMessage" role="alert" aria-atomic="true"><div class="messageCell"><img src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/images/vault_4.0/Error.png"><span class="title">ERROR: </span><span class="message"></span></div><div class="close midToneHover" title="Cerrar"><img src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/images/vault_4.0/Error_Close.png"></div></div><div class="notification" id="successMessage" role="alert" aria-atomic="true"><div class="messageCell"><img src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/images/vault_4.0/Success.png"><span class="title">ÉXITO: </span><span class="message"></span></div><div class="close midToneHover" title="Cerrar"><img src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/images/vault_4.0/Success_Close.png"></div></div><script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/backgroundRequester.js"></script><script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/extensionMessaging.js"></script><script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/extensionReflection.js"></script><script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/loginDialog.js"></script><script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/extensionLoginDialog.js"></script><script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/capslockstate.js"></script><script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/extensionLoginDialogSimple.js"></script><script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/selectDropdown.js"></script><script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/typeaheadDropdown.js"></script><script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/fieldValidator.js"></script><script type="text/javascript" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/backgroundOverlay.js"></script><div class="dialog" role="dialog" aria-labelledby="loginDialogTitle" id="loginDialog" style="display: block; height: 464px;"><button class="focusCycler"></button><div class="dialogHeader icon leftIcon"><div class="dialogHeaderInner"><span class="dialogHeaderTitle" id="loginDialogTitle"></span></div></div><div class="dialogContent dialogContentFixed" style="top: 70px;"><div dialogsection="main" id="loginView" class="lp-grid container gutter-sm">
+  <div class="small-margins">
+    <label for="loginDialogEmail" class="label first">Correo electrónico</label>
+    <label class="error-summary" for="loginDialogEmail" style="display: none;"><div id="validatorSummaryEmail" class="row"><div class="col-1"><div class="validation-img "></div></div><div class="col-11"></div></div></label>
+  </div>
+  
+  <div class="dropdownContainer" style="margin: 0px;"><div class="relative"><div class="dropdownHint" style="line-height: 50px; padding-left: 10px; padding-right: 40px; font-weight: 400; left: 3px; right: 3px;"><span></span></div><input class="dialogInput typeaheadDropdown clickToggles" id="loginDialogEmail" dialogfield="email" type="text" spellcheck="false" style="margin: 0px;"></div><div class="dropdownMenu selectDropdownList" style="margin-top: -4px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;"><ul></ul></div></div><div class="row small-margins">
+    <div class="col-8">
+      <label class="label" for="loginDialogPassword">Contraseña Maestra</label>
+      <label class="error-summary" for="loginDialogPassword" style="display: none;"><div id="validatorSummaryPassword" class="row"><div class="col-1"><div class="validation-img "></div></div><div class="col-11"></div></div></label>
+    </div>
+  </div>
+  <div class="relative">
+    <input class="dialogInput inputCapsMatter unknown" id="loginDialogPassword" dialogfield="password" type="password" spellcheck="false">
+    <button class="showKeyboard" title="Use Virtual Keyboard"></button>
+    <div class="pull-right col-4 tabOrderChange">
+      <a id="forgotPassword" href="javascript:void(0)">Recovery Help</a>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="beforeButtons">
+    <div class="checkboxContainer pull-left">
+      <input id="loginDialogRememberEmail" class="checkbox" dialogfield="rememberEmail" type="checkbox" spellcheck="false">
+      <label class="checkboxLabel" for="loginDialogRememberEmail">Recordar el correo electrónico</label>
+    </div>
+    <div class="checkboxContainer pull-right">
+      <input id="loginDialogRememberPassword" class="checkbox" dialogfield="rememberPassword" type="checkbox" spellcheck="false">
+      <label class="checkboxLabel" for="loginDialogRememberPassword" id="loginDialogRememberPasswordLabel">Recordar la contraseña</label>
+    </div>
+    <div id="loginDialogDisableBrowserDiv" class="checkboxContainer pull-left" style="display: none;">
+      <input id="loginDialogDisableBrowser" class="checkbox" dialogfield="disablePasswordManager" type="checkbox" spellcheck="false">
+      <label class="checkboxLabel" for="loginDialogDisableBrowser" id="loginDialogDisableBrowserLabel">Disable Browser Password Management</label>
+    </div>
+  </div>
+  <div class="buttons centerButtons">
+   <button id="logInButton" class="nbtn rbtn">Log In</button>
+  </div>
+  <div class="content-pull-center gutter-bottom-xl">
+    <div><p class="hr">or</p></div>
+    <button id="newToLastPass">Create an account</button>
+  </div>
+</div>
+</div><button class="focusCycler"></button></div><link type="text/css" rel="stylesheet" href="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/fonts/opensans/opensans.css"><link type="text/css" rel="stylesheet" href="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/loginDialog.css"><link type="text/css" rel="stylesheet" href="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/extensionDialogSimple.css"><link type="text/css" rel="stylesheet" href="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/extensionLoginDialogBase.css"><link type="text/css" rel="stylesheet" href="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/lpGrid.css"><link type="text/css" rel="stylesheet" href="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/backgroundOverlay.css"><link type="text/css" rel="stylesheet" href="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/extensionLoginDialogSimple.css"><div id="blurBackground" class="blur-background dark" style="display: none;"><div class="background-overlay-content"><div class="loading" style="display: none;"><div class="loading-inner"></div></div></div></div></body></html>

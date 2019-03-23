@@ -1,0 +1,45 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertar_registrar`(IN `nom` VARCHAR(50), IN `ape` VARCHAR(50), IN `cor` VARCHAR(50), IN `reg` VARCHAR(50), IN `dist` VARCHAR(50), IN `dni` INT, IN `cel` VARCHAR(20), IN `contra` VARCHAR(20), IN `id_rol` INT)
+begin
+insert into registrar values(null,nom,ape,cor,reg,dist,dni,cel,contra,id_rol);
+end$$
+DELIMITER ;
+
+CREATE PROCEDURE sp_login(in cor varchar(50),in contra varchar(20))
+begin
+SELECT correo ,Contraseña from registrar where correo=cor and contraseña=contra;
+end
+create PROCEDURE sp_registrar_select()
+
+SELECT id, Nombres,Apellidos,Correo,d.nomdepa,p.nomprov,di.nomdis,Dni,Celular,Clave,id_rol from registrar re inner join departamento d on d.iddepa=re.iddepa inner join provincia p on p.idprov=re.idprov inner join distritos di on di.iddis=re.iddis
+
+create PROCEDURE sp_select_depar()
+SELECT * from departamento;
+
+create PROCEDURE sp_select_provin()
+SELECT * from provincia;
+
+create PROCEDURE sp_select_distri()
+SELECT * from distritos;
+create PROCEDURE  sp_select_id(in id int)
+SELECT id,Nombres,Apellidos,Correo,d.nomdepa,p.nomprov,di.nomdis,Dni,Celular,Clave,id_rol from registrar re inner join departamento d on d.iddepa=re.iddepa inner join provincia p on p.idprov=re.idprov inner join distritos di on di.iddis=re.iddis where id=cod
+
+create PROCEDURE sp_actualizar(in cod int ,in nom varchar(50),in ape varchar(50),in cor varchar(50),in depa int ,in  prov int , in dis int ,in dni int,in cel varchar(20),in cla varchar(20))
+begin
+UPDATE  registrar SET Nombres=nom,Apellidos=ape,Correo=cor,iddepa=depa,idprov=prov,iddis=dis,Dni=dni,Celular=cel,Clave=cla where id=cod;
+end
+
+create PROCEDURE sp_eliminar(in cod int)
+BEGIN
+DELETE FROM registrar where id=cod;
+end
+call sp_actualizar(:nom ,:ape,:,:cor,:depa,:prov,:dis,:dni,:cel,:cla,:id)
+
+
+create procedure sp_select_curso_id(in cod int)
+SELECT idcurso ,nomcurso ,descripcion FROM cursos WHERE idcurso=cod;
+
+
+
+
+
