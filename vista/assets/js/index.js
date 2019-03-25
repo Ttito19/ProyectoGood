@@ -3,8 +3,8 @@ $(document).ready(function(){
     type: 'POST',
     url: '../cargar_listas.php'
   })
-  .done(function(listas_rep){
-    $('#lista_reproduccion').html(listas_rep);
+  .done(function(combo){
+    $('#region').html(combo);
   })
   .fail(function(){
     alert('Hubo un errror al cargar las regiones')
@@ -17,8 +17,8 @@ $(document).ready(function(){
     type: 'POST',
     url: '../cargos.php'
   })
-  .done(function(listas_rep){
-    $('#usuarios').html(listas_rep)
+  .done(function(combo){
+    $('#usuarios').html(combo)
   })
   .fail(function(){
     alert('Hubo un errror al cargar los usuarios')
@@ -29,22 +29,18 @@ $(document).ready(function(){
     type: 'POST',
     url: '../empleados.php'
   })
-  .done(function(listas_rep){
-    $('#tipos').html(listas_rep)
+  .done(function(combo){
+    $('#tipos').html(combo)
   })
   .fail(function(){
     alert('Hubo un errror al cargar los empleados')
   })
-
-
-
-
     $.ajax({
     type: 'POST',
     url: '../curso.php'
   })
-  .done(function(listas_rep){
-    $('#curso').html(listas_rep)
+  .done(function(combo){
+    $('#curso').html(combo)
   })
   .fail(function(){
     alert('Hubo un errror al cargar los cursos')
@@ -54,8 +50,8 @@ $(document).ready(function(){
     type: 'POST',
     url: '../profesor.php'
   })
-  .done(function(listas_rep){
-    $('#profesor').html(listas_rep)
+  .done(function(combo){
+    $('#profesor').html(combo)
   })
   .fail(function(){
     alert('Hubo un errror al cargar los profesores')
@@ -66,8 +62,8 @@ $(document).ready(function(){
     type: 'POST',
     url: '../cliente.php'
   })
-  .done(function(listas_rep){
-    $('#cliente').html(listas_rep)
+  .done(function(combo){
+    $('#cliente').html(combo)
   })
   .fail(function(){
     alert('Hubo un errror al cargar los clientes')
@@ -95,8 +91,8 @@ $(document).ready(function(){
 
 
 
-  $('#lista_reproduccion').on('change', function(){
-    var id = $('#lista_reproduccion').val()
+  $('#region').on('change', function(){
+    var id = $('#region').val()
     //alert(id)
    $.ajax({
       type: 'POST',
@@ -105,7 +101,7 @@ $(document).ready(function(){
     })
     .done(function(listas_rep){
       $('#div-prov').removeAttr('hidden');
-      $('#videos').html(listas_rep)
+      $('#provincia').html(listas_rep)
     })
     .fail(function(){
       alert('Hubo un errror al cargar las provincias')
@@ -114,8 +110,8 @@ $(document).ready(function(){
 
 
 
-  $('#videos').on('change', function(){
-    var id = $('#videos').val()
+  $('#provincia').on('change', function(){
+    var id = $('#provincia').val()
     //alert(id)
    $.ajax({
       type: 'POST',
@@ -134,12 +130,5 @@ $(document).ready(function(){
 
 
 
-
-  $('#enviar').on('click', function(){
-    var resultado = 'Lista de reproducción: ' + $('#lista_reproduccion option:selected').text() +
-    ' Video elegido: ' + $('#videos option:selected').text()
-
-    $('#resultado1').html(resultado)
-  })
 
 })

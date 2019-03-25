@@ -1,7 +1,7 @@
 <?php 
 require_once 'conexion.php';
 
-function getVideos(){
+function getDistrito(){
   $mysqli = getConn();
   $id = $_POST['id'];
   $query = "SELECT * FROM `distritos` WHERE idprov = $id";
@@ -13,4 +13,4 @@ function getVideos(){
   return $videos;
 }
 
-echo getVideos();
+echo getDistrito();

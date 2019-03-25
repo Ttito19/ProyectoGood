@@ -97,14 +97,14 @@
                       <?php if (is_null($correo)) {?>
                       <div class="form-group">
                       <p>Region
-                        <select id="lista_reproduccion" name="lista_reproduccion" class="form-control">
+                        <select id="region" name="lista_reproduccion" class="form-control">
                         </select>
                       </p>
                       </div>
 
                       <div class="form-group" id="div-prov" hidden>
                       <p>Provincias
-                        <select id="videos" name="videos" class="form-control">
+                        <select id="provincia" name="videos" class="form-control">
                         </select>
                       </p>
                       </div>
@@ -121,7 +121,7 @@
                       </script> 
 
                       <div class="form-group">
-                      <labe>Dni</label>
+                      <label>Dni</label>
                         <input type="text"  maxlength="8" onkeypress="return valida(event)"  placeholder="Introduce tu dni..."  class="form-control" name="dni" id="dni"   oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" value="<?php echo is_null($correo) ? "" : $correo->getDni() ?>">
                       </div>
 

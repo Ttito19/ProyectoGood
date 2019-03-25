@@ -2,7 +2,7 @@
 require_once 'conexion.php';
 
 
-function getVideos(){
+function getProvincias(){
   $mysqli = getConn();
   $id = $_POST['id'];
   $query = "SELECT * FROM `provincia` WHERE iddepa = $id";
@@ -14,4 +14,4 @@ function getVideos(){
   return $videos;
 }
 
-echo getVideos();
+echo getProvincias();

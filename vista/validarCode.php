@@ -34,7 +34,7 @@ try {
  $resultado1->execute(array(":nombre"=>$nombre));
  $resultado2->execute(array(":nombre"=>$nombre));
 
-
+//ternario
 // print_r(($resultado->fetch()>0)?"empleados" :"MAL"); echo "<hr>";
 // print_r(($resultado1->fetch()>0)? "cliente":"MAL" );echo "<hr>";
 // print_r(($resultado2->fetch()>0)? "profesor": "MAL");
@@ -43,7 +43,6 @@ try {
 
 
 while($registro=$resultado->fetch(PDO::FETCH_ASSOC)) {
-
     if(password_verify($clave, $registro['clave'])) {
         $contador++;
     }
