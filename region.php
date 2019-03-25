@@ -1,7 +1,7 @@
 <?php 
 require_once 'conexion.php';
 
-function getListasRep(){
+function getRegion(){
   $mysqli = getConn();
   $query = 'SELECT * FROM `departamento`';
   $result = $mysqli->query($query);
@@ -12,4 +12,4 @@ function getListasRep(){
   return $listas;
 }
 //hola
-echo getListasRep();
+echo getRegion();
