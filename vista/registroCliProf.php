@@ -58,19 +58,19 @@
                       <?php if (is_null($correo)) {?>
                       <div class="form-group">
                       <p>Region
-                        <select id="lista_reproduccion" name="lista_reproduccion" class="form-control">
+                        <select id="region" name="lista_reproduccion" class="form-control">
                         </select>
                       </p>
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group" id="div-prov" hidden>
                       <p>Provincias
-                        <select id="videos" name="videos" class="form-control">
+                        <select id="provincia" name="videos" class="form-control">
                         </select>
                       </p>
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group" id="div-dis" hidden>
                       <p>Distritos
                         <select id="dis" name="dis" class="form-control">
                         </select>
