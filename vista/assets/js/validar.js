@@ -8,6 +8,7 @@ celular=document.getElementById("celular").value;
 pass=document.getElementById("contra").value;
 //expresion =/^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 //expresion=/\w+@\w+\.+[a-z]/;
+
 if (nombre === "" || apellido === "" || correo === "" ||dni === "" ||celular === "" ||pass === "" ) {
     alert("El campo esta vacio");
     return false;

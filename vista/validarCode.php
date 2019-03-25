@@ -18,26 +18,36 @@ try {
  $cont=0;
 
  //almaceno la consulta SQL
+//  $sql = "SELECT * FROM LOGIN WHERE nom_usu = :nombre and pass= :pass";
+
  $sql = "SELECT * FROM empleados WHERE correo = :nombre";
  $sql1=  "SELECT * FROM cliente where corcli= :nombre";
  $sql2=  "SELECT * from profesor where corpro=:nombre ";
  //preparo la consulta SQL
  $resultado=$conexion->prepare($sql);
+ $resultado1=$conexion->prepare($sql1);
+ $resultado2=$conexion->prepare($sql2);
 
 
  //ejecuto la consulta SQL
  $resultado->execute(array(":nombre"=>$nombre));
+ $resultado1->execute(array(":nombre"=>$nombre));
+ $resultado2->execute(array(":nombre"=>$nombre));
 
-   
 
+// print_r(($resultado->fetch()>0)?"empleados" :"MAL"); echo "<hr>";
+// print_r(($resultado1->fetch()>0)? "cliente":"MAL" );echo "<hr>";
+// print_r(($resultado2->fetch()>0)? "profesor": "MAL");
 
  //almaceno el resultado en un array asociativo y lo recorro
- while($registro=$resultado->fetch(PDO::FETCH_ASSOC)) {
-  
-  if(password_verify($clave, $registro['clave'])) {
-   $contador++;
-  }
- }
+
+
+while($registro=$resultado->fetch(PDO::FETCH_ASSOC)) {
+
+    if(password_verify($clave, $registro['clave'])) {
+        $contador++;
+    }
+}
 
   $resultado1=$conexion->prepare($sql1);
  $resultado1->execute(array(":nombre"=>$nombre));
@@ -47,10 +57,10 @@ try {
    $conta++;
   }
  }
+
   $resultado2=$conexion->prepare($sql2);
  $resultado2->execute(array(":nombre"=>$nombre));
  while($registro=$resultado2->fetch(PDO::FETCH_ASSOC)) {
-  
   if(password_verify($clave, $registro['clavepro'])) {
    $cont++;
   }

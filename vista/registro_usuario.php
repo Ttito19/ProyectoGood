@@ -3,21 +3,21 @@
     <?php include 'partials/head.php';?>
    <?php
 
-  if (isset($_SESSION["correo"])) {
-      if ($_SESSION["correo"]["tipo"] == 2) {
-          header("location:usuario.php");
-      }
-  }else {
-     header("location:index.php");
-  }
+  // if (isset($_SESSION["correo"])) {
+  //     if ($_SESSION["correo"]["tipo"] == 2) {
+  //         header("location:usuario.php");
+  //     }
+  // }else {
+  //    header("location:index.php");
+  // }
 
-  if (isset($_SESSION["correo"])) {
-  if( $_SESSION["correo"]["tipo"] == 3){
-          header("location:docente.php");
-      }
-  }else{
-        header("location:index.php");
-  }
+  // if (isset($_SESSION["correo"])) {
+  // if( $_SESSION["correo"]["tipo"] == 3){
+  //         header("location:docente.php");
+  //     }
+  // }else{
+  //       header("location:index.php");
+  // }
 
 
   ?>
@@ -86,7 +86,7 @@
                       <input type="text" placeholder="Introduce tu nombre..."  class="form-control" name="nom" id="nombre" value="<?php echo is_null($correo) ? "" : $correo->getNombre() ?>">
                       </div>
                       <div class="form-group">
-                      <labe>Apellidos </label>
+                      <label>Apellidos </label>
                       <input type="text" placeholder="Introduce tus apellidos..."  class="form-control" name="ape" id="apellido" value="<?php echo is_null($correo) ? "" : $correo->getApellido() ?>">
                       </div>
 
@@ -102,14 +102,14 @@
                       </p>
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group" id="div-prov" hidden>
                       <p>Provincias
                         <select id="videos" name="videos" class="form-control">
                         </select>
                       </p>
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group" id="div-dis" hidden>
                       <p>Distritos
                         <select id="dis" name="dis" class="form-control">
                         </select>

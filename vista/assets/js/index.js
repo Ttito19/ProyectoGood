@@ -4,12 +4,11 @@ $(document).ready(function(){
     url: '../cargar_listas.php'
   })
   .done(function(listas_rep){
-    $('#lista_reproduccion').html(listas_rep)
+    $('#lista_reproduccion').html(listas_rep);
   })
   .fail(function(){
     alert('Hubo un errror al cargar las regiones')
   })
-
 
 
 
@@ -105,6 +104,7 @@ $(document).ready(function(){
       data: {'id': id}
     })
     .done(function(listas_rep){
+      $('#div-prov').removeAttr('hidden');
       $('#videos').html(listas_rep)
     })
     .fail(function(){
@@ -123,6 +123,7 @@ $(document).ready(function(){
       data: {'id': id}
     })
     .done(function(listas_rep){
+      $('#div-dis').removeAttr("hidden");
       $('#dis').html(listas_rep)
     })
     .fail(function(){
