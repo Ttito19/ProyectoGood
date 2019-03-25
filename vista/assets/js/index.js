@@ -69,12 +69,6 @@ $(document).ready(function(){
     alert('Hubo un errror al cargar los clientes')
   })
 
-
-
-
-
-
-
     $.ajax({
     type: 'POST',
     url: '../clipro.php'
