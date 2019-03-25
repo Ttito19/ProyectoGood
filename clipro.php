@@ -11,7 +11,7 @@ function getListasRep(){
     $listas .= "<option value='$row[idtipo]'>$row[nomtipo]</option>";
   }
   return $listas;
-  //SUBIENDO ARRIBA
+  //SUBIENDO sdad
 }
 
 echo getListasRep();
