@@ -1,5 +1,5 @@
 <?php 
-require_once 'conexion.php';
+require_once '../conexion.php';
 
 function getRegion(){
   $mysqli = getConn();
@@ -11,5 +11,4 @@ function getRegion(){
   }
   return $listas;
 }
-//hola
 echo getRegion();

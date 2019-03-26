@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $.ajax({
     type: 'POST',
-    url: '../cboRegion.php'
+    url: './cboRegion.php'
   })
   .done(function(combo){
     $('#region').html(combo);
@@ -15,7 +15,7 @@ $(document).ready(function(){
 
    $.ajax({
     type: 'POST',
-    url: '../cargos.php'
+    url: './cboCargos.php'
   })
   .done(function(combo){
     $('#usuarios').html(combo)
@@ -27,7 +27,7 @@ $(document).ready(function(){
 
    $.ajax({
     type: 'POST',
-    url: '../empleados.php'
+    url: './cboEmpleados.php'
   })
   .done(function(combo){
     $('#tipos').html(combo)
@@ -37,7 +37,7 @@ $(document).ready(function(){
   })
     $.ajax({
     type: 'POST',
-    url: '../curso.php'
+    url: './cboCurso.php'
   })
   .done(function(combo){
     $('#curso').html(combo)
@@ -48,7 +48,7 @@ $(document).ready(function(){
 
     $.ajax({
     type: 'POST',
-    url: '../profesor.php'
+    url: './cboProfesor.php'
   })
   .done(function(combo){
     $('#profesor').html(combo)
@@ -60,7 +60,7 @@ $(document).ready(function(){
 
     $.ajax({
     type: 'POST',
-    url: '../cliente.php'
+    url: './cboCliente.php'
   })
   .done(function(combo){
     $('#cliente').html(combo)
@@ -71,7 +71,7 @@ $(document).ready(function(){
 
     $.ajax({
     type: 'POST',
-    url: '../clipro.php'
+    url: './cboCliente_Profesor.php'
   })
   .done(function(listas_rep){
     $('#clipro').html(listas_rep)
@@ -80,17 +80,12 @@ $(document).ready(function(){
     alert('Hubo un errror al cargar los clientes')
   })
 
-
-
-
-
-
   $('#region').on('change', function(){
     var id = $('#region').val()
     //alert(id)
    $.ajax({
       type: 'POST',
-      url: '../cboProvincias.php',
+      url: './cboProvincias.php',
       data: {'id': id}
     })
     .done(function(listas_rep){
@@ -107,7 +102,7 @@ $(document).ready(function(){
     //alert(id)
    $.ajax({
       type: 'POST',
-      url: '../cboDistritos.php',
+      url: './cboDistritos.php',
       data: {'id': id}
     })
     .done(function(listas_rep){
@@ -118,9 +113,5 @@ $(document).ready(function(){
       alert('Hubo un error al cargar los distritos')
     })
   })
-
-
-
-
 
 })

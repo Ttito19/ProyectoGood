@@ -51,7 +51,7 @@ if(isset($_GET["idempleado"])){
                 <input type="text" placeholder="Introduce tu nombre..." required class="form-control" name="nom" value="<?php echo is_null($correo) ? "" : $correo->getNombre() ?>">
               </div>
              <div class="form-group">
-                <labe>Apellidos </label>
+                <label>Apellidos </label>
                   <input type="text" placeholder="Introduce tus apellidos..." required class="form-control" name="ape" value="<?php echo is_null($correo) ? "" : $correo->getApellido() ?>">
                 </div>
 
@@ -65,7 +65,7 @@ if(isset($_GET["idempleado"])){
                 </script> 
 
                   <div class="form-group">
-                  <labe>Dni</label>
+                  <label>Dni</label>
                     <input type="text"  maxlength="8" onkeypress="return valida(event)"  placeholder="Introduce tu dni..." required class="form-control" name="dni" required="" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" value="<?php echo is_null($correo) ? "" : $correo->getDni() ?>">
                   </div>
 

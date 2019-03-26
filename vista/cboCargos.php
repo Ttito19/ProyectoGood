@@ -15,7 +15,7 @@ function getListasRep(){
 echo getListasRep();
 */
 
-require_once 'conexion.php';
+require_once '../conexion.php';
 
 function getListasRep(){
   $mysqli = getConn();

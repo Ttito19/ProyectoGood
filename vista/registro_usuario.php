@@ -31,32 +31,6 @@
                $correo   = usuarioControlador::getCorreoPorId($id);
     }
     ?>
-
-<!--
-    <script language="JavaScript" type="text/JavaScript">
-
-    function FX_passGenerator(form,element) {
-      var thePass = "";
-      var randomchar = "";
-      var numberofdigits = Math.floor((Math.random() * 7) + 6);
-      for (var count=1; count<=numberofdigits; count++) {
-        var chargroup = Math.floor((Math.random() * 3) + 1);
-        if (chargroup==1) {
-          randomchar = Math.floor((Math.random() * 26) + 65);
-        }
-        if (chargroup==2) {
-          randomchar = Math.floor((Math.random() * 10) + 48);
-        }
-        if (chargroup==3) {
-          randomchar = Math.floor((Math.random() * 26) + 97);
-        }
-        thePass+=String.fromCharCode(randomchar);
-      }
-      eval('document.'+form+'.'+element+'.value = thePass');
-    }
-
-    </script>  
--->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <div class="container">
@@ -133,9 +107,7 @@
 
                       <div class="form-group">
                         <label for="contra" >Contraseña</label>
-                        <input type="password" placeholder="Introduce tu contraseña..."  class="form-control" name="contra" id="contra">
-              
-                        <button type="submit" onClick="FX_passGenerator('form','contra')" >Generar</button>
+                        <input type="password" placeholder="Introduce tu contraseña..."  class="form-control" name="contra" id="contra">  
                       </div> 
                   <button type="submit" class="btn btn-primary " id="registrar"> <?php echo is_null($correo) ? "Registrar" : "Editar" ?></button>
                     </form>
