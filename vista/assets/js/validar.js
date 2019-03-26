@@ -6,6 +6,7 @@ correo=document.getElementById("correo").value;
 dni=document.getElementById("dni").value;
 celular=document.getElementById("celular").value;
 pass=document.getElementById("contra").value;
+
 //expresion =/^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 //expresion=/\w+@\w+\.+[a-z]/;
 

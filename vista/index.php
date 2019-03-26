@@ -2,7 +2,7 @@
 <?php include 'partials/menu.php';?>
 </head>
 <body class="cover" style="background-image: url(./assets/img/login.jpg);">
-	<form id="loginForm" action="validarCode.php" method="POST" autocomplete="off" class="full-box logInForm" role="form"  >
+	<form id="loginForm" action="validarCode.php" method="POST" autocomplete="off" class="full-box logInForm" role="form" >
 		<p class="text-center text-muted"><i class="zmdi zmdi-account-circle zmdi-hc-5x"></i></p>
 		<p class="text-center text-muted text-uppercase">Inicia sesión con tu cuenta</p>
 		<div class="form-group label-floating">

@@ -89,7 +89,7 @@
                         <div class="form-group">
                         <label>Celular </label>
                         <input type="text" maxlength="9" onkeypress="return valida(event)" placeholder="Introduce el celular..." required="" class="form-control" name="cel" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" value="<?php echo is_null($correo) ? "" : $correo->getCelular() ?>">
-                      </div>
+                        </div>
 
 
                       <div class="form-group">
@@ -106,8 +106,8 @@
           </div>
 
         </div><!-- /.container -->
-          <script src="js/bootstrap.min.js"></script>           
-           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-           <script type="text/javascript" src="assets/js/index.js"></script>
-<?php include 'partials/footer.php';?>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/index.js"></script>
+        <?php include 'partials/footer.php';?>
 

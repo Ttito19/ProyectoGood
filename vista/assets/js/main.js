@@ -1,145 +1,86 @@
-/*
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
-(function($) {
-
-	var	$window = $(window),
-		$body = $('body'),
-		$header = $('#header'),
-		$banner = $('#banner');
-
-	// Breakpoints.
-		breakpoints({
-			xlarge:	'(max-width: 1680px)',
-			large:	'(max-width: 1280px)',
-			medium:	'(max-width: 980px)',
-			small:	'(max-width: 736px)',
-			xsmall:	'(max-width: 480px)'
-		});
-
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
-
-	// Header.
-		if ($banner.length > 0
-		&&	$header.hasClass('alt')) {
-
-			$window.on('resize', function() { $window.trigger('scroll'); });
-
-			$banner.scrollex({
-				bottom:		$header.outerHeight(),
-				terminate:	function() { $header.removeClass('alt'); },
-				enter:		function() { $header.addClass('alt'); },
-				leave:		function() { $header.removeClass('alt'); }
-			});
-
+$(document).ready(function(){
+	$('.btn-sideBar-SubMenu').on('click', function(){
+		var SubMenu=$(this).next('ul');
+		var iconBtn=$(this).children('.zmdi-caret-down');
+		if(SubMenu.hasClass('show-sideBar-SubMenu')){
+			iconBtn.removeClass('zmdi-hc-rotate-180');
+			SubMenu.removeClass('show-sideBar-SubMenu');
+		}else{
+			iconBtn.addClass('zmdi-hc-rotate-180');
+			SubMenu.addClass('show-sideBar-SubMenu');
 		}
-
-	// Menu.
-		var $menu = $('#menu');
-
-		$menu._locked = false;
-
-		$menu._lock = function() {
-
-			if ($menu._locked)
-				return false;
-
-			$menu._locked = true;
-
-			window.setTimeout(function() {
-				$menu._locked = false;
-			}, 350);
-
-			return true;
-
-		};
-
-		$menu._show = function() {
-
-			if ($menu._lock())
-				$body.addClass('is-menu-visible');
-
-		};
-
-		$menu._hide = function() {
-
-			if ($menu._lock())
-				$body.removeClass('is-menu-visible');
-
-		};
-
-		$menu._toggle = function() {
-
-			if ($menu._lock())
-				$body.toggleClass('is-menu-visible');
-
-		};
-
-		$menu
-			.appendTo($body)
-			.on('click', function(event) {
-
-				event.stopPropagation();
-
-				// Hide.
-					$menu._hide();
-
-			})
-			.find('.inner')
-				.on('click', '.close', function(event) {
-
-					event.preventDefault();
-					event.stopPropagation();
-					event.stopImmediatePropagation();
-
-					// Hide.
-						$menu._hide();
-
-				})
-				.on('click', function(event) {
-					event.stopPropagation();
-				})
-				.on('click', 'a', function(event) {
-
-					var href = $(this).attr('href');
-
-					event.preventDefault();
-					event.stopPropagation();
-
-					// Hide.
-						$menu._hide();
-
-					// Redirect.
-						window.setTimeout(function() {
-							window.location.href = href;
-						}, 350);
-
-				});
-
-		$body
-			.on('click', 'a[href="#menu"]', function(event) {
-
-				event.stopPropagation();
-				event.preventDefault();
-
-				// Toggle.
-					$menu._toggle();
-
-			})
-			.on('keydown', function(event) {
-
-				// Hide on escape.
-					if (event.keyCode == 27)
-						$menu._hide();
-
-			});
-
+	});
+	$('.btn-exit-system').on('click', function(){
+		swal({
+		  	title: 'Are you sure?',
+		  	text: "The current session will be closed",
+		  	type: 'warning',
+		  	showCancelButton: true,
+		  	confirmButtonColor: '#03A9F4',
+		  	cancelButtonColor: '#F44336',
+		  	confirmButtonText: '<i class="zmdi zmdi-run"></i> Yes, Exit!',
+		  	cancelButtonText: '<i class="zmdi zmdi-close-circle"></i> No, Cancel!'
+		}).then(function () {
+			window.location.href="index.html";
+		});
+	});
+	$('.btn-menu-dashboard').on('click', function(){
+		var body=$('.dashboard-contentPage');
+		var sidebar=$('.dashboard-sideBar');
+		if(sidebar.css('pointer-events')=='none'){
+			body.removeClass('no-paddin-left');
+			sidebar.removeClass('hide-sidebar').addClass('show-sidebar');
+		}else{
+			body.addClass('no-paddin-left');
+			sidebar.addClass('hide-sidebar').removeClass('show-sidebar');
+		}
+	});
+	$('.btn-Notifications-area').on('click', function(){
+		var NotificationsArea=$('.Notifications-area');
+		if(NotificationsArea.css('opacity')=="0"){
+			NotificationsArea.addClass('show-Notification-area');
+		}else{
+			NotificationsArea.removeClass('show-Notification-area');
+		}
+	});
+	$('.btn-search').on('click', function(){
+		swal({
+		  title: '¿Qué estás buscando?',
+		  confirmButtonText: '<i class="zmdi zmdi-search"></i>  Search',
+		  confirmButtonColor: '#03A9F4',
+		  showCancelButton: true,
+		  cancelButtonColor: '#F44336',
+		  cancelButtonText: '<i class="zmdi zmdi-close-circle"></i> Cancel',
+		  html: '<div class="form-group label-floating">'+
+			  		'<label class="control-label" for="InputSearch">write here</label>'+
+			  		'<input class="form-control" id="InputSearch" type="text">'+
+				'</div>'
+		}).then(function () {
+		  swal(
+		    'You wrote',
+		    ''+$('#InputSearch').val()+'',
+		    'success'
+		  )
+		});
+	});
+	$('.btn-modal-help').on('click', function(){
+		$('#Dialog-Help').modal('show');
+	});
+});
+(function($){
+    $(window).on("load",function(){
+        $(".dashboard-sideBar-ct").mCustomScrollbar({
+        	theme:"light-thin",
+        	scrollbarPosition: "inside",
+        	autoHideScrollbar: true,
+        	scrollButtons: {enable: true}
+        });
+        $(".dashboard-contentPage, .Notifications-body").mCustomScrollbar({
+        	theme:"dark-thin",
+        	scrollbarPosition: "inside",
+        	autoHideScrollbar: true,
+        	scrollButtons: {enable: true}
+        });
+    });
 })(jQuery);

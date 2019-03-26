@@ -121,10 +121,6 @@
 
         </div><!-- /.container -->
           <script src="js/bootstrap.min.js"></script>
-
-         <!--  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
-           <script src="js/mostrar.js"></script>
-                  <script src="js/jquery.min.js"></script>  -->
            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
             <script type="text/javascript" src="assets/js/index.js"></script>
           
