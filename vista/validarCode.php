@@ -5,7 +5,17 @@ obligo a este fichero
 a usar mis datos de
 acceso a la base de datos
 */
-require '../conexion.php';
+require '../datos/conexion.php';
+class UsuarioDao extends Conexion
+{
+protected static $cnx;
+private static function getConexion(){
+	self::$cnx=Conexion::conectar();
+}
+private static function desconectar(){
+	self::$cnx=null;
+}
+}
 
 try {
  //obtengo los datos del formulario...
