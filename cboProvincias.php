@@ -13,5 +13,4 @@ function getProvincias(){
   }
   return $videos;
 }
-
 echo getProvincias();

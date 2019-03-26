@@ -12,5 +12,4 @@ function getDistrito(){
   }
   return $videos;
 }
-
 echo getDistrito();

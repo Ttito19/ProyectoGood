@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $.ajax({
     type: 'POST',
-    url: '../cargar_listas.php'
+    url: '../cboRegion.php'
   })
   .done(function(combo){
     $('#region').html(combo);
@@ -90,7 +90,7 @@ $(document).ready(function(){
     //alert(id)
    $.ajax({
       type: 'POST',
-      url: '../cargar_videos.php',
+      url: '../cboProvincias.php',
       data: {'id': id}
     })
     .done(function(listas_rep){
@@ -98,18 +98,16 @@ $(document).ready(function(){
       $('#provincia').html(listas_rep)
     })
     .fail(function(){
-      alert('Hubo un errror al cargar las provincias')
+     
     })
   })
-
-
 
   $('#provincia').on('change', function(){
     var id = $('#provincia').val()
     //alert(id)
    $.ajax({
       type: 'POST',
-      url: '../distritos.php',
+      url: '../cboDistritos.php',
       data: {'id': id}
     })
     .done(function(listas_rep){
