@@ -1,6 +1,6 @@
 <?php
 
-
+//conexion crud
 class Conexion{
  public static function conectar(){
  	try {
@@ -15,6 +15,7 @@ class Conexion{
 ?>
 
 <?php  
+//conexion login
 //configuracion de la conexion
 $servidor = 'localhost';
 $base_datos = 'bdgoodpartner';
@@ -28,7 +29,10 @@ $conexion = new PDO("mysql:host=$servidor; dbname=$base_datos", $usuario, $clave
 $conexion->exec("SET CHARACTER SET utf8");
 ?>
 
+
+
 <?php 
+//conexion combos
 function getConn(){
   $mysqli = mysqli_connect('localhost', 'root', '', "bdgoodpartner");
   if (mysqli_connect_errno($mysqli))
