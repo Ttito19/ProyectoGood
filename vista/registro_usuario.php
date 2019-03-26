@@ -31,7 +31,7 @@
                $correo   = usuarioControlador::getCorreoPorId($id);
     }
     ?>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
     <div class="container">
 
@@ -120,7 +120,7 @@
           </div>
 
         </div><!-- /.container -->
-          <script src="js/bootstrap.min.js"></script>
+          
            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
             <script type="text/javascript" src="assets/js/index.js"></script>
           

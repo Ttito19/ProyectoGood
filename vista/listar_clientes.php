@@ -58,21 +58,21 @@ $filas=usuarioControlador::getCliente();
 					</tr>
 				</thead>
 				<tbody>
-				<?php foreach ($filas as $docente ) {
+				<?php foreach ($filas as $clientes ) {
 					?>
 				<tr>	
-				    <td><?php echo $docente["idcliente"]?></td> 
-				    <td><?php echo $docente["nomcli"]?></td> 
-	                <td><?php echo $docente["apecli"]?></td>
-	                <td><?php echo $docente["corcli"]?></td>
-	                <td><?php echo $docente["dnicli"]?></td>
-	                <td><?php echo $docente["celcli"]?></td>	          
-	                <td><?php echo $docente["idempleado"]?></td>
-	                <td><?php echo getRol($docente["tipo"])?></td>
+				    <td><?php echo $clientes["idcliente"]?></td> 
+				    <td><?php echo $clientes["nomcli"]?></td> 
+	                <td><?php echo $clientes["apecli"]?></td>
+	                <td><?php echo $clientes["corcli"]?></td>
+	                <td><?php echo $clientes["dnicli"]?></td>
+	                <td><?php echo $clientes["celcli"]?></td>	          
+	                <td><?php echo $clientes["idempleado"]?></td>
+	                <td><?php echo getRol($clientes["tipo"])?></td>
 	              	                			                  
 	                <td>
-	                	<a href="procesoUpdateCliente.php?idcliente=<?php echo $docente["idcliente"]?>" class="btn btn-success btn-sn">Editar</a>  
-	                   	<a href="javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'eliminar_crud_form.php?idcliente=<?php echo $docente["idcliente"]?>');" class="btn btn-danger btn-sn">Eliminar</a>
+	                	<a href="procesoUpdateCliente.php?idcliente=<?php echo $clientes["idcliente"]?>" class="btn btn-success btn-sn">Editar</a>  
+	                   	<a href="javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'eliminar_crud_form.php?idcliente=<?php echo $clientes["idcliente"]?>');" class="btn btn-danger btn-sn">Eliminar</a>
 	                </td>
                 </tr>
 				<?php }?>

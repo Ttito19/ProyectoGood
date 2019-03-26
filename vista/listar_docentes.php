@@ -1,24 +1,5 @@
 <?php include 'partials/head.php';?>
-<?php
 
-if (isset($_SESSION["correo"])) {
-    if ($_SESSION["correo"]["tipo"] == 2) {
-        header("location:usuario.php");
-    }
-}else {
-   header("location:index.php");
-}
-
-if (isset($_SESSION["correo"])) {
-if(	$_SESSION["correo"]["tipo"] == 3){
-		    header("location:docente.php");
-		}
-}else{
-	    header("location:index.php");
-}
-
-
-?>
 
 <?php include 'partials/menu.php';?>
 <?php 
@@ -72,9 +53,10 @@ $filas=usuarioControlador::getDocente();
 	                <td><?php echo getRol($docente["tipo"])?></td>
 	              	                			                  
 	                <td>
-	                	<a href="procesoUpdateDocente.php?idprofesor=<?php echo $docente["idprofesor"]?>" class="btn btn-success btn-sn">Editar</a>  
-	                   	<a href="javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'eliminar_crud_form.php?idprofesor=<?php echo $docente["idprofesor"]?>');" class="btn btn-danger btn-sn">Eliminar</a>
-	                </td>
+	             <a href="procesoUpdateDocente.php?idprofesor=<?php echo $docente["idprofesor"]?>" class="btn btn-success btn-sn">Editar</a>  
+							 <a href="javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'eliminar_docente_form.php?idprofesor=<?php echo $docente["idprofesor"]?>');" class="btn btn-danger btn-sn">Eliminar</a>
+									</td>
+					<!--javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'');-->
                 </tr>
 				<?php }?>
 							</tbody>
@@ -90,18 +72,20 @@ $filas=usuarioControlador::getDocente();
 
 <script type="text/javascript">
 
+function eliminar(confirmacion, url){
 
+if(confirmacion){
+ 	window.location.href = url;
+}else{
+	$("body").overhang({
+  type: "error",
+  message: "Se cancelo la operacion",
+  duration: 0.5,
+	
+});
+}
 
-	function eliminar(confirmacion, url){
-
-		if(confirmacion){
-
-			window.location.href = url;
-
-		}
-
-	}
-
+}
 </script>
 <?php include 'partials/footer.php';?>
 

@@ -1,21 +1,6 @@
 <?php include 'partials/head.php';?>
 <?php
 
-if (isset($_SESSION["correo"])) {
-    if ($_SESSION["correo"]["tipo"] == 2) {
-        header("location:usuario.php");
-    }
-}else {
-   header("location:index.php");
-}
-
-if (isset($_SESSION["correo"])) {
-if(	$_SESSION["correo"]["tipo"] == 3){
-		    header("location:docente.php");
-		}
-}else{
-	    header("location:index.php");
-}
 
 
 ?>

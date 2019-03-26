@@ -328,6 +328,42 @@ $resultado->execute();
         }
         return false;
     }
+    
+    public static function getEliminarDocente($id){
+
+        $query="call sp_eliminar_profesor(:id)";
+        self::getConexion();
+        $resultado=self::$cnx->prepare($query);
+        $resultado->bindParam(":id",$id);
+        $resultado->execute();
+          if ($resultado->execute()) {
+                    return true;
+                }
+                return false;
+            }
+    public static function getEliminarCliente($id){
+
+        $query="call sp_eliminar_cliente(:id)";
+        self::getConexion();    
+        $resultado=self::$cnx->prepare($query);
+        $resultado->bindParam(":id",$id);
+        $resultado->execute();
+         if ($resultado->execute()) {
+                    return true;
+           }
+                    return false;
+                    }
+                
+        
+
+
+
+
+
+
+
+
+
 
 
 public static function updateDocenteDao($update)
@@ -434,50 +470,6 @@ $correo->setCelular($filas["celcli"]);
 return $correo;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 public static function getCursoPorId($id){
 $query="call sp_select_curso_id(:id)";

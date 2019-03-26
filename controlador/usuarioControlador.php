@@ -186,6 +186,13 @@ public function updateCliente($nombre, $apellido, $correo, $dni, $celular, $clav
      public function getEliminar($id){
         return UsuarioDao::getEliminar($id);
     }
+    
+    public function getEliminarDocente($id){
+        return UsuarioDao::getEliminarDocente($id);
+    }
+    public function getEliminarCliente($id){
+        return UsuarioDao::getEliminarCliente($id);
+    }
 
 
 }
