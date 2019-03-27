@@ -1,5 +1,23 @@
    <?php include 'partials/head.php';?>
-   
+   <?php
+/*
+  if (isset($_SESSION["correo"])) {
+      if ($_SESSION["correo"]["tipo"] == 2) {
+          header("location:usuario.php");
+      }
+  }else {
+     header("location:index.php");
+  }
+
+  if (isset($_SESSION["correo"])) {
+  if( $_SESSION["correo"]["tipo"] == 3){
+          header("location:docente.php");
+      }
+  }else{
+        header("location:index.php");
+  }
+  */
+  ?>
     <?php include 'partials/menu.php';?>
   
     <?php
@@ -58,21 +76,21 @@
                       <?php if (is_null($correo)) {?>
                       <div class="form-group">
                       <p>Region
-                        <select id="region" name="lista_reproduccion" class="form-control">
+                        <select id="region" name="region" class="form-control">
                         </select>
                       </p>
                       </div>
 
                       <div class="form-group" id="div-prov" hidden>
                       <p>Provincias
-                        <select id="provincia" name="videos" class="form-control">
+                        <select id="provincia" name="provincia" class="form-control">
                         </select>
                       </p>
                       </div>
 
                       <div class="form-group" id="div-dis" hidden>
                       <p>Distritos
-                        <select id="dis" name="dis" class="form-control">
+                        <select id="dis" name="distrito" class="form-control">
                         </select>
                       </p>
                       </div>  

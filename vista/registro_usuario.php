@@ -2,24 +2,22 @@
 
     <?php include 'partials/head.php';?>
    <?php
+   /*
+if (isset($_SESSION["correo"])) {
+    if ($_SESSION["correo"]["tipo"] == 2) {
+        header("location:usuario.php");
+    }
+}else {
+   header("location:index.php");
+}
 
-  // if (isset($_SESSION["correo"])) {
-  //     if ($_SESSION["correo"]["tipo"] == 2) {
-  //         header("location:usuario.php");
-  //     }
-  // }else {
-  //    header("location:index.php");
-  // }
-
-  // if (isset($_SESSION["correo"])) {
-  // if( $_SESSION["correo"]["tipo"] == 3){
-  //         header("location:docente.php");
-  //     }
-  // }else{
-  //       header("location:index.php");
-  // }
-
-
+if (isset($_SESSION["correo"])) {
+if( $_SESSION["correo"]["tipo"] == 3){
+        header("location:docente.php");
+    }
+}else{
+      header("location:index.php");
+}*/
   ?>
     <?php include 'partials/menu.php';?>
     <?php
@@ -31,8 +29,6 @@
                $correo   = usuarioControlador::getCorreoPorId($id);
     }
     ?>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
     <div class="container">
 
       <div class="starter-template">
@@ -40,7 +36,7 @@
           <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
               <div class="panel-body">
-                <form name="form" action="registroCode.php" method="POST" onsubmit="return validar();">
+                <form name="form" action="registroCode.php" method="POST"  onsubmit="return validar();">
 
                     <?php if (is_null($correo)) {?>
                     <legend>Registrar Nuevo Empleado</legend>
@@ -71,21 +67,21 @@
                       <?php if (is_null($correo)) {?>
                       <div class="form-group">
                       <p>Region
-                        <select id="region" name="lista_reproduccion" class="form-control">
+                        <select id="region" name="region" class="form-control">
                         </select>
                       </p>
                       </div>
 
                       <div class="form-group" id="div-prov" hidden>
                       <p>Provincias
-                        <select id="provincia" name="videos" class="form-control">
+                        <select id="provincia" name="provincia" class="form-control">
                         </select>
                       </p>
                       </div>
 
                       <div class="form-group" id="div-dis" hidden>
                       <p>Distritos
-                        <select id="dis" name="dis" class="form-control">
+                        <select id="dis" name="distrito" class="form-control">
                         </select>
                       </p>
                       </div>  
@@ -107,7 +103,7 @@
 
                       <div class="form-group">
                         <label for="contra" >Contraseña</label>
-                        <input type="password" placeholder="Introduce tu contraseña..."  class="form-control" name="contra" id="contra">  
+                        <input type="password" placeholder="Introduce tu contraseña..."  class="form-control" name="contra" id="contra">                              
                       </div> 
                   <button type="submit" class="btn btn-primary " id="registrar"> <?php echo is_null($correo) ? "Registrar" : "Editar" ?></button>
                     </form>
@@ -120,7 +116,8 @@
           </div>
 
         </div><!-- /.container -->
-          
+       
+
            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
             <script type="text/javascript" src="assets/js/index.js"></script>
           

@@ -2,7 +2,7 @@
 
 <?php include 'partials/head.php';?>
 <?php
-
+/*
 if (isset($_SESSION["correo"])) {
     if ($_SESSION["correo"]["tipo"] == 2) {
         header("location:usuario.php");
@@ -18,7 +18,7 @@ if( $_SESSION["correo"]["tipo"] == 3){
 }else{
       header("location:login.php");
 }
-
+*/
 
 ?>
 <?php include 'partials/menu.php';?>

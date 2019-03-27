@@ -1,4 +1,5 @@
-<?php include 'partials/headd.php';?>
+<?php include 'partials/head.php';?>
+  <link rel="stylesheet" href="assets/css/main.css">
 <?php include 'partials/menu.php';?>
 </head>
 <body class="cover" style="background-image: url(./assets/img/login.jpg);">

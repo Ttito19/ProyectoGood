@@ -9,6 +9,7 @@ include '../helps/helps.php';
 
 $filas=usuarioControlador::getDocente();
 ?>
+
 <div class="container">
 
 	<div class="starter-template">
@@ -24,7 +25,7 @@ $filas=usuarioControlador::getDocente();
 			<div class="col-md-auto ">
 				<div class="panel panel-default">
 					<div class="panel-body">
-			<table class="table table-active ">
+			<table class="table table-active " id="tabla" >
 				<thead>
 					<tr>	
 						    <th>Codigo</th>	
@@ -54,7 +55,7 @@ $filas=usuarioControlador::getDocente();
 	              	                			                  
 	                <td>
 	             <a href="procesoUpdateDocente.php?idprofesor=<?php echo $docente["idprofesor"]?>" class="btn btn-success btn-sn">Editar</a>  
-							 <a href="javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'eliminar_docente_form.php?idprofesor=<?php echo $docente["idprofesor"]?>');" class="btn btn-danger btn-sn">Eliminar</a>
+								 <a href="javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'eliminar_usuarios_form.php?idprofesor=<?php echo $docente["idprofesor"]?>');" class="btn btn-danger btn-sn">Eliminar</a>
 									</td>
 					<!--javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'');-->
                 </tr>
@@ -71,20 +72,26 @@ $filas=usuarioControlador::getDocente();
 
 
 <script type="text/javascript">
-
 function eliminar(confirmacion, url){
+		if(confirmacion){
 
-if(confirmacion){
- 	window.location.href = url;
-}else{
-	$("body").overhang({
-  type: "error",
-  message: "Se cancelo la operacion",
-  duration: 0.5,
-	
+			window.setTimeout(function(){
+
+window.location.href = url;
+
+}, 1000);
+$("body").overhang({
+  type: "success",
+  message: "Eliminado Correctamente"
 });
-}
 
+	}else{
+		$("body").overhang({
+  type: "error",
+  message: "Operacion cancelada",
+  duration: 0.5,
+});
+	}
 }
 </script>
 <?php include 'partials/footer.php';?>

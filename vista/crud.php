@@ -43,21 +43,21 @@ $filas=usuarioControlador::getEmpleados();
 					</tr>
 				</thead>
 				<tbody>
-				<?php foreach ($filas as $cliente ) {
+				<?php foreach ($filas as $empleados ) {
 					?>
 				<tr>	
-				    <td><?php echo $cliente["idempleado"]?></td> 
-				    <td><?php echo getRol($cliente["tipo"])?></td>     
-	                <td><?php echo $cliente["nombre"]?></td>
-	                <td><?php echo $cliente["apellido"]?></td>
-	                <td><?php echo $cliente["correo"]?></td>
-	                <td><?php echo $cliente["dni"]?></td>
-	                <td><?php echo $cliente["celular"]?></td>
+				    <td><?php echo $empleados["idempleado"]?></td> 
+				    <td><?php echo getRol($empleados["tipo"])?></td>     
+	                <td><?php echo $empleados["nombre"]?></td>
+	                <td><?php echo $empleados["apellido"]?></td>
+	                <td><?php echo $empleados["correo"]?></td>
+	                <td><?php echo $empleados["dni"]?></td>
+	                <td><?php echo $empleados["celular"]?></td>
 	          
 	              	                			                  
 	                <td>
-	                	<a href="viewUpdate.php?idempleado=<?php echo $cliente["idempleado"]?>" class="btn btn-success btn-sn">Editar</a>  
-	                   	<a href="javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'eliminar_crud_form.php?idempleado=<?php echo $cliente["idempleado"]?>');" class="btn btn-danger btn-sn">Eliminar</a>
+	                	<a href="viewUpdate.php?idempleado=<?php echo $empleados["idempleado"]?>" class="btn btn-success btn-sn">Editar</a>  
+	                   	<a href="javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'eliminar_crud_form.php?idempleado=<?php echo $empleados["idempleado"]?>');" class="btn btn-danger btn-sn">Eliminar</a>
 	                </td>
                 </tr>
 				<?php }?>
@@ -73,19 +73,27 @@ $filas=usuarioControlador::getEmpleados();
 
 
 <script type="text/javascript">
-
-
-
-	function eliminar(confirmacion, url){
-
+function eliminar(confirmacion, url){
 		if(confirmacion){
 
-			window.location.href = url;
+			window.setTimeout(function(){
 
-		}
+window.location.href = url;
 
+}, 1000);
+$("body").overhang({
+  type: "success",
+  message: "Eliminado Correctamente"
+});
+
+	}else{
+		$("body").overhang({
+  type: "error",
+  message: "Operacion cancelada",
+  duration: 0.5,
+});
 	}
-
+}
 </script>
 <?php include 'partials/footer.php';?>
 
