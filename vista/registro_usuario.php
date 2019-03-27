@@ -29,6 +29,7 @@ if( $_SESSION["correo"]["tipo"] == 3){
                $correo   = usuarioControlador::getCorreoPorId($id);
     }
     ?>
+     <link href="assets/css/select2.css" rel="stylesheet"/>
     <div class="container">
 
       <div class="starter-template">
@@ -66,24 +67,21 @@ if( $_SESSION["correo"]["tipo"] == 3){
                       </div>   
                       <?php if (is_null($correo)) {?>
                       <div class="form-group">
-                      <p>Region
-                        <select id="region" name="region" class="form-control">
-                        </select>
-                      </p>
+                      <Label>Region</label>
+                        <select id="region" name="region" class="form-control" style="width: 100%"  ></select>
+                      
                       </div>
 
                       <div class="form-group" id="div-prov" hidden>
-                      <p>Provincias
-                        <select id="provincia" name="provincia" class="form-control">
-                        </select>
-                      </p>
+                      <Label>Provincias</label>
+                        <select id="provincia" name="provincia" class="form-control" style="width: 100% "></select>
+                      
                       </div>
 
                       <div class="form-group" id="div-dis" hidden>
-                      <p>Distritos
-                        <select id="dis" name="distrito" class="form-control">
-                        </select>
-                      </p>
+                      <Label>Distritos</label>
+                        <select id="dis" name="distrito" class="form-control" style="width: 100% "></select>
+                      
                       </div>  
                             <?php }?>
                       <script>
@@ -120,6 +118,13 @@ if( $_SESSION["correo"]["tipo"] == 3){
 
            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
             <script type="text/javascript" src="assets/js/index.js"></script>
+
+            <script src = "assets/js/select2.js"></script>
+            <script>
+             $(document).ready(function() { $("#region").select2(); }); 
+             $(document).ready(function() { $("#provincia").select2(); });  
+             $(document).ready(function() { $("#dis").select2(); });            
+            </script>
           
            
 
