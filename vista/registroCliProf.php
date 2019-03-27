@@ -43,15 +43,12 @@
                     <?php if (is_null($correo)) {?>
                     <legend>Registrar Usuarios</legend>
                       <div class="form-group">
-                    <p>Nombre del Empleado
-                      <select id="tipos" name="tipos" class="form-control">
-                      </select>
-                    </p>
+                      <Label>Registrador</label>
+                      <select id="tipos" name="tipos" class="form-control" style="width: 100%"></select>             
                     <div class="form-group">
-                    <p>Cargo
-                      <select id="clipro" name="clipro" class="form-control">
-                      </select>
-                    </p>
+                    <Label>Usuarios</label>
+                      <select id="clipro" name="clipro" class="form-control" style="width: 100%"></select>
+                    
                     </div>
                      <?php } else {?>
                      <legend>Editar Docente [<?php echo $correo->getNombre() ?>]</legend>
@@ -75,24 +72,22 @@
                       </div>   
                       <?php if (is_null($correo)) {?>
                       <div class="form-group">
-                      <p>Region
-                        <select id="region" name="region" class="form-control">
+                      <label>Region </label>
+                        <select id="region" name="region" class="form-control" style="width: 100%">
                         </select>
-                      </p>
+                      
                       </div>
 
                       <div class="form-group" id="div-prov" hidden>
-                      <p>Provincias
-                        <select id="provincia" name="provincia" class="form-control">
+                      <label>Provincia</label>
+                        <select id="provincia" name="provincia" class="form-control" style="width: 100%">
                         </select>
-                      </p>
+                      
                       </div>
 
                       <div class="form-group" id="div-dis" hidden>
-                      <p>Distritos
-                        <select id="dis" name="distrito" class="form-control">
-                        </select>
-                      </p>
+                      <label>Distritos</label>
+                        <select id="dis" name="distrito" class="form-control" style="width: 100%"></select>                    
                       </div>  
                             <?php }?>
                       <script>
@@ -111,7 +106,7 @@
 
 
                       <div class="form-group">
-                        <p for="contra" >Contraseña</p></i>
+                      <label>Contraseña </label>
                         <input type="password" placeholder="Introduce tu contraseña..." required="" class="form-control" name="contra" id="contra">
 
                       </div> 
@@ -127,5 +122,7 @@
        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script type="text/javascript" src="assets/js/index.js"></script>
+        <script src = "assets/js/select2.js"></script>
+       
         <?php include 'partials/footer.php';?>
 

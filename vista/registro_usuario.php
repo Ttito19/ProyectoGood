@@ -29,9 +29,8 @@ if( $_SESSION["correo"]["tipo"] == 3){
                $correo   = usuarioControlador::getCorreoPorId($id);
     }
     ?>
-     <link href="assets/css/select2.css" rel="stylesheet"/>
+   
     <div class="container">
-
       <div class="starter-template">
         <div class="row">
           <div class="col-md-4 col-md-offset-4">
@@ -42,10 +41,9 @@ if( $_SESSION["correo"]["tipo"] == 3){
                     <?php if (is_null($correo)) {?>
                     <legend>Registrar Nuevo Empleado</legend>
                     <div class="form-group">
-                    <p>Cargo
-                      <select id="usuarios" name="usuario" class="form-control">
-                      </select>
-                    </p>
+                    <Label>Cargos</label>
+                      <select id="usuarios" name="usuario" class="form-control" style="width: 100%"> </select>
+                    
                     </div>
                      <?php } else {?>
                      <legend>Editar correo [<?php echo $correo->getNombre() ?>]</legend>
@@ -119,13 +117,8 @@ if( $_SESSION["correo"]["tipo"] == 3){
            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
             <script type="text/javascript" src="assets/js/index.js"></script>
 
-            <script src = "assets/js/select2.js"></script>
-            <script>
-             $(document).ready(function() { $("#region").select2(); }); 
-             $(document).ready(function() { $("#provincia").select2(); });  
-             $(document).ready(function() { $("#dis").select2(); });            
-            </script>
-          
+           
+            <?php include 'partials/footer.php';?>
            
 
 

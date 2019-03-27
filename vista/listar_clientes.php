@@ -72,8 +72,8 @@ $filas=usuarioControlador::getCliente();
 	              	                			                  
 	                <td>
 	                	<a href="procesoUpdateCliente.php?idcliente=<?php echo $clientes["idcliente"]?>" class="btn btn-success btn-sn">Editar</a>  
-	                   	<a href="javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'eliminar_usuarios_form.php?idcliente=<?php echo $clientes["idcliente"]?>');" class="btn btn-danger btn-sn">Eliminar</a>
-	                </td>
+					<a href="javascript:prueba();" class="btn btn-danger btn-sn">Eliminar</a>
+					</td>
                 </tr>
 				<?php }?>
 							</tbody>
@@ -86,15 +86,11 @@ $filas=usuarioControlador::getCliente();
 
 </div><!-- /.container -->
 
-
 <script type="text/javascript">
 function eliminar(confirmacion, url){
 		if(confirmacion){
-
 			window.setTimeout(function(){
-
-window.location.href = url;
-
+			window.location.href = url;
 }, 1000);
 $("body").overhang({
   type: "success",
@@ -104,11 +100,31 @@ $("body").overhang({
 	}else{
 		$("body").overhang({
   type: "error",
-  message: "Operacion cancelada",
+  message: "Error interno",
   duration: 0.5,
 });
 	}
 }
+
+function prueba(){
+	$("body").overhang({
+		type: "confirm",
+  message: "¿Deseas eliminar?",
+  overlay: true,
+  callback: function (value) {
+    if (value) {
+		eliminar(true, "eliminar_usuarios_form.php?idcliente=<?php echo $clientes['idcliente']?>" )
+    } else {
+		$("body").overhang({
+  type: "error",
+  message: "Operacion cancelada",
+  duration: 0.5,
+});
+	}
+  }
+})
+}
+
 </script>
 <?php include 'partials/footer.php';?>
 
