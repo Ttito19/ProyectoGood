@@ -1,5 +1,6 @@
 <?php include 'partials/head.php';?>
 <?php
+ 
 /*
 if (isset($_SESSION["correo"])) {
     if ($_SESSION["correo"]["tipo"] == 2) {
@@ -27,7 +28,7 @@ if(	$_SESSION["correo"]["tipo"] == 3){
 		<br>
 		<div class="jumbotron">
 			<div class="container text-center">
-				<h1><strong>Bienvenido</strong> <?php echo $_SESSION["correo"]["nombre"]; ?></h1>
+				<h1><strong>Bienvenido</strong> <?php echo $_SESSION["nombre"]; ?></h1>
 			
 			<!--	<p>
 					<a href="cerrar-sesion.php" class="btn btn-primary btn-lg">Cerrar sesión</a>
@@ -37,10 +38,10 @@ if(	$_SESSION["correo"]["tipo"] == 3){
 	</div>
 </div><!-- /.container -->
 
-						        <?php if (!isset($_SESSION["correo"])) {?>         
+						        <?php if (!isset($_SESSION["nombre"])) {?>         
             <?php } else {
     ?>
-              <?php if ($_SESSION["correo"]["tipo"] == 1) {?>
+              <?php if ($_SESSION["nombre"] == 1) {?>
               <li><a href="admin.php">Admin</a></li>
               <li><a href="registro_usuario.php">Registro Empleados</a></li>
               <li><a href="registroCliProf.php">Registro Usuarios</a></li>

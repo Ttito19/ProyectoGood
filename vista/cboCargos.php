@@ -19,7 +19,7 @@ require_once '../datos/conexion.php';
 
 function getListasRep(){
   $mysqli = getConn();
-  $query = 'SELECT  * FROM tipo where idtipo=1 ';
+  $query = 'SELECT  * FROM tipo where tipo=1 ';
   $result = $mysqli->query($query);
  // $listas = '<option value="0">Elige un Cargo</option>';
   while($row = $result->fetch_array(MYSQLI_ASSOC)){

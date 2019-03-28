@@ -1,15 +1,28 @@
 <?php include 'partials/head.php';?>
-
+<?php
+/*
+if (isset($_SESSION["correo"])) {
+    if ($_SESSION["correo"]["tipo"] == 2) {
+        header("location:usuario.php");
+    }
+}else {
+   header("location:index.php");
+}
+if (isset($_SESSION["correo"])) {
+if(	$_SESSION["correo"]["tipo"] == 3){
+		    header("location:docente.php");
+		}
+}else{
+	    header("location:index.php");
+}*/
+?>
 
 <?php include 'partials/menu.php';?>
 <?php 
 include "../controlador/usuarioControlador.php";
 include '../helps/helps.php';
-
-
-$filas=usuarioControlador::getDocente();
+$filas=usuarioControlador::getCliente();
 ?>
-
 <div class="container">
 
 	<div class="starter-template">
@@ -25,7 +38,7 @@ $filas=usuarioControlador::getDocente();
 			<div class="col-md-auto ">
 				<div class="panel panel-default">
 					<div class="panel-body">
-			<table class="table table-active " id="tabla" >
+			<table class="table table-active ">
 				<thead>
 					<tr>	
 						    <th>Codigo</th>	
@@ -33,31 +46,29 @@ $filas=usuarioControlador::getDocente();
 							<th>Apellidos</th>				
 						    <th>Correo</th>
 						    <th>Dni</th>
-						    <th>Celular</th>							   
+						    <th>Celular</th>					
 						    <th>Registrador</th>		
 						    <th>Privilegio</th>	
-						    <th>Acciones</th>	
-					
+					        <th>Acciones</th>	
 					</tr>
 				</thead>
 				<tbody>
-				<?php foreach ($filas as $docente ) {
+				<?php foreach ($filas as $clientes ) {
 					?>
 				<tr>	
-				    <td><?php echo $docente["idprofesor"]?></td> 
-				    <td><?php echo $docente["nompro"]?></td> 
-	                <td><?php echo $docente["apepro"]?></td>
-	                <td><?php echo $docente["corpro"]?></td>
-	                <td><?php echo $docente["dnipro"]?></td>
-	                <td><?php echo $docente["celpro"]?></td>	               
-	                <td><?php echo $docente["idempleado"]?></td>
-	                <td><?php echo getRol($docente["tipo"])?></td>
+				    <td><?php echo $clientes["idcliente"]?></td> 
+				    <td><?php echo $clientes["nomcli"]?></td> 
+	                <td><?php echo $clientes["apecli"]?></td>
+	                <td><?php echo $clientes["corcli"]?></td>
+	                <td><?php echo $clientes["dnicli"]?></td>
+	                <td><?php echo $clientes["celcli"]?></td>	          
+	                <td><?php echo $clientes["idempleado"]?></td>
+	                <td><?php echo getRol($clientes["tipo"])?></td>
 	              	                			                  
 	                <td>
-	             <a href="procesoUpdateDocente.php?idprofesor=<?php echo $docente["idprofesor"]?>" class="btn btn-success btn-sn">Editar</a>  
-								 <a href="javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'eliminar_usuarios_form.php?idprofesor=<?php echo $docente["idprofesor"]?>');" class="btn btn-danger btn-sn">Eliminar</a>
-									</td>
-					<!--javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'');-->
+	                	<a href="procesoUpdateCliente.php?idcliente=<?php echo $clientes["idcliente"]?>" class="btn btn-success btn-sn">Editar</a>  
+					<a href="javascript:prueba();" class="btn btn-danger btn-sn">Eliminar</a>
+					</td>
                 </tr>
 				<?php }?>
 							</tbody>
@@ -70,29 +81,41 @@ $filas=usuarioControlador::getDocente();
 
 </div><!-- /.container -->
 
-
 <script type="text/javascript">
 function eliminar(confirmacion, url){
 		if(confirmacion){
-
 			window.setTimeout(function(){
-
-window.location.href = url;
-
+			window.location.href = url;
 }, 1000);
 $("body").overhang({
   type: "success",
   message: "Eliminado Correctamente"
 });
-
 	}else{
+		$("body").overhang({
+  type: "error",
+  message: "Error interno",
+  duration: 0.5,
+});
+	}
+}
+function prueba(){
+	$("body").overhang({
+		type: "confirm",
+  message: "¿Deseas eliminar?",
+  overlay: true,
+  callback: function (value) {
+    if (value) {
+		eliminar(true, "eliminar_usuarios_form.php?idcliente=<?php echo $clientes['idcliente']?>" )
+    } else {
 		$("body").overhang({
   type: "error",
   message: "Operacion cancelada",
   duration: 0.5,
 });
 	}
+  }
+})
 }
 </script>
 <?php include 'partials/footer.php';?>
-

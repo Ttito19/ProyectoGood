@@ -40,9 +40,9 @@ $filas=usuarioControlador::getCliente();
 			<br>
 			</div>
 
-			<div class="col-md-auto ">
-				<div class="panel panel-default">
-					<div class="panel-body">
+	
+				
+					
 			<table class="table table-active ">
 				<thead>
 					<tr>	
@@ -71,16 +71,16 @@ $filas=usuarioControlador::getCliente();
 	                <td><?php echo getRol($clientes["tipo"])?></td>
 	              	                			                  
 	                <td>
-	                	<a href="procesoUpdateCliente.php?idcliente=<?php echo $clientes["idcliente"]?>" class="btn btn-success btn-sn">Editar</a>  
+	        <a href="procesoUpdateCliente.php?idcliente=<?php echo $clientes["idcliente"]?>" class="btn btn-success btn-sn">Editar</a>  
 					<a href="javascript:prueba();" class="btn btn-danger btn-sn">Eliminar</a>
 					</td>
                 </tr>
 				<?php }?>
 							</tbody>
 						</table>
-					</div>
-				</div>
-			</div>
+					
+				
+			
 		</div>
 	</div>
 
@@ -113,8 +113,9 @@ function prueba(){
   overlay: true,
   callback: function (value) {
     if (value) {
-		eliminar(true, "eliminar_usuarios_form.php?idcliente=<?php echo $clientes['idcliente']?>" )
+		eliminar(true, "eliminar_usuarios_form.php?idcliente=<?php echo $clientes['idcliente']?>")
     } else {
+			
 		$("body").overhang({
   type: "error",
   message: "Operacion cancelada",
@@ -122,7 +123,7 @@ function prueba(){
 });
 	}
   }
-})
+});
 }
 
 </script>
