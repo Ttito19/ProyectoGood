@@ -1,22 +1,17 @@
 <?php include 'partials/head.php';?>
 <?php
-/*
-if (isset($_SESSION["correo"])) {
-    if ($_SESSION["correo"]["tipo"] == 1) {
-        header("location:admin.php");
-    }
-}else {
-    header("location:login.php");
-}
 
-if (isset($_SESSION["correo"])) {
-if(	$_SESSION["correo"]["tipo"] == 2){
-		    header("location:usuario.php");
-		}
-}else{
-	    header("location:login.php");
-}
-*/
+if(isset($_SESSION["tipo"]))  
+ { 
+     if($_SESSION["tipo"]=1){
+        header("location:index.php");  
+     }else if($_SESSION["tipo"]=2){
+        header("location:index.php"); 
+     } 
+
+ }
+
+
 
 ?>
 
@@ -28,11 +23,11 @@ if(	$_SESSION["correo"]["tipo"] == 2){
 		<br>
 		<div class="jumbotron">
 			<div class="container text-center">
-				<h1><strong>Bienvenido</strong> <?php echo $_SESSION["correo"]["nompro"]; ?></h1>
+				<h1><strong>Bienvenido</strong> <?php echo $_SESSION["nompro"]; ?></h1>
 				
-				<!--	<p>
+					<p>
 					<a href="cerrar-sesion.php" class="btn btn-primary btn-lg">Cerrar sesión</a>
-				</p>-->
+				</p>
 			</div>
 		</div>
 	</div>
