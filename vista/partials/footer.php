@@ -1,13 +1,4 @@
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-  	
-
-  
-<!--<script src="./js/jquery-3.1.1.min.js"></script>
-  <script src="./js/sweetalert2.min.js"></script> -->
-  <!--<script src="assets/js/bootstrap.min.js"></script>-->
   <script src="assets/js/material.min.js"></script>
   <script src="assets/js/ripples.min.js"></script>
   <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -34,11 +25,5 @@
              $(document).ready(function() { $("#clipro").select2(); }); 
              $(document).ready(function() { $("#usuarios").select2(); });          
     </script>
-          
-
-
-
-
-    
   </body>
 </html>
