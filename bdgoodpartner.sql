@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-03-2019 a las 16:40:10
--- Versión del servidor: 10.1.35-MariaDB
--- Versión de PHP: 7.2.9
+-- Tiempo de generación: 01-04-2019 a las 16:54:03
+-- Versión del servidor: 10.1.37-MariaDB
+-- Versión de PHP: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -2463,7 +2463,7 @@ INSERT INTO `provincia` (`idprov`, `nomprov`, `iddepa`) VALUES
 --
 
 CREATE TABLE `tipo` (
-  `idtipo` int(11) NOT NULL,
+  `tipo` int(11) NOT NULL,
   `nomtipo` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -2471,7 +2471,7 @@ CREATE TABLE `tipo` (
 -- Volcado de datos para la tabla `tipo`
 --
 
-INSERT INTO `tipo` (`idtipo`, `nomtipo`) VALUES
+INSERT INTO `tipo` (`tipo`, `nomtipo`) VALUES
 (1, 'admin'),
 (2, 'cliente'),
 (3, 'profesor');
@@ -2581,7 +2581,7 @@ ALTER TABLE `provincia`
 -- Indices de la tabla `tipo`
 --
 ALTER TABLE `tipo`
-  ADD PRIMARY KEY (`idtipo`);
+  ADD PRIMARY KEY (`tipo`);
 
 --
 -- Indices de la tabla `turno`
@@ -2651,7 +2651,7 @@ ALTER TABLE `profesor`
 -- AUTO_INCREMENT de la tabla `tipo`
 --
 ALTER TABLE `tipo`
-  MODIFY `idtipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `tipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `turno`
