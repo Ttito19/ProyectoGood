@@ -23,6 +23,7 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  
       <script src="assets/js/validar.js"></script>
+      <script src="assets/js/validarLogin.js"></script>
       <link href="assets/css/select2.css" rel="stylesheet"/>
 
     <link rel="stylesheet" type="text/css" href="assets/css/index.css" />

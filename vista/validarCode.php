@@ -18,6 +18,7 @@ $clave=htmlentities(addslashes($_POST['txtPassword']));
 
 
 
+
 $sql = $conn->prepare('SELECT idempleado,correo,clave,nombre, e.tipo from empleados e INNER join  tipo t on e.tipo=t.tipo where correo   = :nombre'); 
 $sql->execute(array(':nombre' => $nombre));
 $resultado = $sql->fetch(PDO::FETCH_ASSOC);
