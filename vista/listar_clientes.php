@@ -29,14 +29,12 @@ include '../helps/helps.php';
 $filas=usuarioControlador::getCliente();
 ?>
 <div class="container">
-
-	<div class="starter-template">	
 			<div class="col-md-auto ">			
 				<a href="registroCliProf.php" class="btn btn-primary">Registrar Usuarios</a>
 			<br>
 			<br>
 			</div>	
-			<table class="table" >
+			<table class="table" id="table" >
 				<thead>
 					<tr class="bg-warning">	
 					<th scope="col">Codigo</th>
@@ -47,7 +45,7 @@ $filas=usuarioControlador::getCliente();
 					<th scope="col">Celular</th>
 					<th scope="col">Registrador</th>
 					<th scope="col">Privilegio</th>			
-			  	<th colspan="2"> <center>  Acciones </center> </th>
+			  	<th colspan="2">   Acciones  </th>
 					</tr>
 				</thead>
 				<tbody>
@@ -62,16 +60,14 @@ $filas=usuarioControlador::getCliente();
 	                <th><?php echo $clientes["celcli"]?></th>	          
 	                <th><?php echo $clientes["idempleado"]?></th>
 	                <th><?php echo getRol($clientes["tipo"])?></th>          	                			                  
-	               <th><a href="procesoUpdateCliente.php?idcliente=<?php echo $clientes["idcliente"]?>" class="btn btn-success btn-sn">Editar</a></th>
-				         <th><a href="javascript:prueba();" class="btn btn-danger btn-sn">Eliminar</a></th>
-                </tr>
+	                <th><a href="procesoUpdateCliente.php?idcliente=<?php echo $clientes["idcliente"]?>" class="btn btn-success btn-sn">Editar</a>
+				             <a href="javascript:prueba();" class="btn btn-danger btn-sn">Eliminar</a></th>
+        </tr>
 				<?php }?>
 							</tbody>
 						</table>	
 		</div>
 	</div>
-	
-
 </div><!-- /.container -->
 
 <script type="text/javascript">
@@ -113,7 +109,26 @@ function prueba(){
   }
 });
 }
+</script>
+<script type="text/javascript"     >  
+
+$('#table').pagination({
+    dataSource: [1, 2, 3,...15],
+    pageSize: 5,
+    autoHidePrevious: true,
+    autoHideNext: true,
+    callback: function(data, pagination) {
+        // template method of yourself
+        var html = template(data);
+        dataContainer.html(html);
+    }
+})
 
 </script>
+
+
+
+
+
 <?php include 'partials/footer.php';?>
 

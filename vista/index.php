@@ -1,22 +1,35 @@
 <?php include 'partials/head.php';?>
-  <link rel="stylesheet" href="assets/css/main.css">
+
+
+
 <?php include 'partials/menu.php';?>
-<body class="cover" style="background-image: url(./assets/img/login.jpg);">
-	<form id="loginForm" action="validarCode.php" method="POST" autocomplete="off" class="full-box logInForm" role="form"  onsubmit="return validarLogin();" >
-		<p class="text-center text-muted"><i class="zmdi zmdi-account-circle zmdi-hc-5x"></i></p>
-		<p class="text-center text-muted text-uppercase">Inicia sesión con tu cuenta</p>
-		<div class="form-group label-floating">
-		  <label class="control-label" for="UserEmail">E-mail</label>
-		  <input class="form-control" id="correoLogin" type="email" name="txtCorreo">
-		  <p class="help-block">Escribe tú E-mail</p>
-		</div>
-		<div class="form-group label-floating">
-		  <label class="control-label" for="UserPass">Contraseña</label>
-		  <input class="form-control" id="passwordLogin" type="password"  name="txtPassword">
-		  <p class="help-block">Escribe tú contraseña</p>
-		</div>
-		<div class="form-group text-center">
-		<button type="submit" class="btn btn-raised btn-danger" id="registrar">Registrar</button>
-		</div>
-	</form>
-	<?php include 'partials/footer.php';?>
+<div class="container"  style="margin-top: 100px;">
+<div class="row justify-content-center">
+<div  class="col-md-6 col-offset-3"  align="center" style="background-color: #eeeeee; padding: 50px;"  >
+<i class="far fa-user-circle fa-8x"   ></i>
+<form	  method="POST"  action="validarCode"   onsubmit="return validarLogin();"  >
+<h1>Login</h1>
+<div class="form-group">
+<label>Correo Electronico</label>
+<input type="text" name="txtCorreo"  id="correoLogin"  class="form-control"  style="width:50%;" >	
+</div>
+<div class="form-group">
+<label>Clave:</label>
+<input type="text" name="txtPassword" id="passwordLogin"   class="form-control"  style="width:50%;">	
+</div>	
+<input  type="submit" class="btn btn-primary"  >
+<input  type="submit" value="Google"  class="btn btn-danger"  >
+
+</form>
+<br>
+<a href="olvidarContraseña.php">¿Has olvidado tu contraseña?</a>
+</div>
+</div>
+</div>
+
+
+
+
+
+<?php include 'partials/footer.php';?>
+
