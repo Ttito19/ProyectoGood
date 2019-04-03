@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $.ajax({
     type: 'POST',
-    url: './cboRegion.php'
+    url: './combos/cboRegion.php'
   })
   .done(function(combo){
     $('#region').html(combo);
@@ -15,7 +15,7 @@ $(document).ready(function(){
 
    $.ajax({
     type: 'POST',
-    url: './cboCargos.php'
+    url: './combos/cboCargos.php'
   })
   .done(function(combo){
     $('#usuarios').html(combo)
@@ -27,7 +27,7 @@ $(document).ready(function(){
 
    $.ajax({
     type: 'POST',
-    url: './cboEmpleados.php'
+    url: './combos/cboEmpleados.php'
   })
   .done(function(combo){
     $('#tipos').html(combo)
@@ -37,7 +37,7 @@ $(document).ready(function(){
   })
     $.ajax({
     type: 'POST',
-    url: './cboCurso.php'
+    url: './combos/cboCurso.php'
   })
   .done(function(combo){
     $('#curso').html(combo)
@@ -48,7 +48,7 @@ $(document).ready(function(){
 
     $.ajax({
     type: 'POST',
-    url: './cboProfesor.php'
+    url: './combos/cboProfesor.php'
   })
   .done(function(combo){
     $('#profesor').html(combo)
@@ -60,7 +60,7 @@ $(document).ready(function(){
 
     $.ajax({
     type: 'POST',
-    url: './cboCliente.php'
+    url: './combos/cboCliente.php'
   })
   .done(function(combo){
     $('#cliente').html(combo)
@@ -71,7 +71,7 @@ $(document).ready(function(){
 
     $.ajax({
     type: 'POST',
-    url: './cboCliente_Profesor.php'
+    url: './combos/cboCliente_Profesor.php'
   })
   .done(function(listas_rep){
     $('#clipro').html(listas_rep)
@@ -85,7 +85,7 @@ $(document).ready(function(){
     //alert(id)
    $.ajax({
       type: 'POST',
-      url: './cboProvincias.php',
+      url: './combos/cboProvincias.php',
       data: {'id': id}
     })
     .done(function(listas_rep){
@@ -102,7 +102,7 @@ $(document).ready(function(){
     //alert(id)
    $.ajax({
       type: 'POST',
-      url: './cboDistritos.php',
+      url: './combos/cboDistritos.php',
       data: {'id': id}
     })
     .done(function(listas_rep){

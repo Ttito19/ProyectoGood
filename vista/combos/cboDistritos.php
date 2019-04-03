@@ -1,5 +1,5 @@
 <?php 
-require_once '../datos/conexion.php';
+require_once '../../datos/conexion.php';
 
 function getDistrito(){
   $mysqli = getConn();

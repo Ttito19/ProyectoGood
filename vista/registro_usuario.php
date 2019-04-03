@@ -112,9 +112,6 @@ if( $_SESSION["correo"]["tipo"] == 3){
           </div>
 
         </div><!-- /.container -->
-       
-
-           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
             <script type="text/javascript" src="assets/js/index.js"></script>       
             <?php include 'partials/footer.php';?>
             

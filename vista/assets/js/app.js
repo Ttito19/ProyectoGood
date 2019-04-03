@@ -1,4 +1,5 @@
 /*$(document).ready(function() {
+
     $("#loginForm").bind("submit", function() {
 
         $.ajax({
@@ -9,15 +10,7 @@
                 $("#loginForm button[type=submit]").html("enviando...");
                 $("#loginForm button[type=submit]").attr("disabled", "disabled");
             },
-
             success: function(response) {
-                   $('#login').click(function(){
-                   var user = $('#correo').val();
-                  var pass = $('#password').val();
-       //     if ($.trim(user).length > 0 && $.trim(pass).length > 0) {
-
-
-
                 if (response.estado == "true") {
                     $("body").overhang({
                         type: "success",
@@ -35,23 +28,13 @@
 
                 $("#loginForm button[type=submit]").html("Ingresar");
                 $("#loginForm button[type=submit]").removeAttr("disabled");
-/*
-             }else{
-                 $("body").overhang({
-                        type: "error",
-                        message: "Datos Incompletos"
-                    });
-             }
-           
-
-   });
-
             },
             error: function() {
                 $("body").overhang({
                     type: "error",
                     message: "Usuario o password incorrecto!"
-                });       
+                });
+
                 $("#loginForm button[type=submit]").html("Ingresar");
                 $("#loginForm button[type=submit]").removeAttr("disabled");
             }
