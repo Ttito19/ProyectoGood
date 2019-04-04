@@ -8,7 +8,6 @@ if (isset($_SESSION["correo"])) {
 }else {
    header("location:index.php");
 }
-
 if (isset($_SESSION["correo"])) {
 if(	$_SESSION["correo"]["tipo"] == 3){
 		    header("location:docente.php");
@@ -16,16 +15,12 @@ if(	$_SESSION["correo"]["tipo"] == 3){
 }else{
 	    header("location:index.php");
 }*/
-
-
 ?>
 
 <?php include 'partials/menu.php';?>
 <?php 
 include "../controlador/usuarioControlador.php";
 include '../helps/helps.php';
-
-
 $filas=usuarioControlador::getCliente();
 ?>
 <div class="container">

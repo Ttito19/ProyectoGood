@@ -41,7 +41,7 @@ if ($resultado ) { //Retorna TRUE en caso de encontrar datos referentes al USUAR
 
             } 
         } else {
-            echo "Contraseña incorrecta";
+            echo "<script>alert('Contraseña Incorrecta'); location.href='index.php'</script>";
          }
 
 }else if($resultado1 ){
@@ -69,6 +69,7 @@ if ($resultado ) { //Retorna TRUE en caso de encontrar datos referentes al USUAR
     echo "Contraseña incorrecta del Docente";
  }
 }else {
-    echo "Usuario no existe";
+    echo "<script>alert('Usuario no exixte'); location.href='index.php'</script>";
+   
 }
 

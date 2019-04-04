@@ -25,13 +25,11 @@ $filas=usuarioControlador::getCliente();
 ?>
 <div class="container">
 
-	<div class="starter-template">	
-		<br>
-			<div class="col-md-auto ">			
+	<div class="col-md-auto ">	
+		</div>			
 				<a href="registroCliProf.php" class="btn btn-primary">Registrar Usuarios</a>
-			<br>
-			<br>
-			</div>
+				<br>
+        <br>	
 			<table class="table table-active ">
 				<thead>
 					<tr class="bg-warning">	
