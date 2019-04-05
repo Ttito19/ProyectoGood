@@ -32,8 +32,8 @@
 <div class="form-group">
 <label>Correo Electronico:</label>
 <input type="text"  name="txtCorreo"  id="correoLogin"  class="form-control"  style="width:50%;" >	
-<span class="green" id="correcto"></span>
-<span style="color: #ff0000; id="incorrecto"></span>
+<span style="color: #00FF00;" id="correcto"></span>
+<span style="color: #ff0000;" id="incorrecto"></span>
 </div>
 <div class="form-group">
 <label>Clave:</label>
@@ -52,15 +52,15 @@
 <script  type="text/javascript">
 document.getElementById('correoLogin').addEventListener('input', function() {
     evento = event.target;
-    validar = document.getElementById('correcto');
-    validar1 = document.getElementById('incorrecto');
-        
+    validar1 = document.getElementById('correcto');
+    validar = document.getElementById('incorrecto');      
     emailRegex = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
     //Se muestra un texto a modo de ejemplo, luego va a ser un icono
     if (emailRegex.test(evento.value)) {
-      valido.innerText = "válido";
+      validar1.innerText = "Correo válido";
+   //   validar.style.display = 'none';
     } else {
-      validar.innerText = "incorrecto";
+      validar.innerText = " Correo incorrecto";
     }
 });
 
