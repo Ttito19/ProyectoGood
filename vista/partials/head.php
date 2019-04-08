@@ -9,9 +9,9 @@
 
     <meta name="descripcion" content="">
     <meta name="autor" content="">
-    <title>Starter Template for Bootstrap</title>
+    <title>Pagina sin nombre</title>
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   
     
    <!-- <link href="assets/css/all.css" rel="stylesheet">-->
@@ -21,14 +21,12 @@
  
     <script src="assets/js/validar.js"></script>
     <script src="assets/js/validarLogin.js"></script>   
-    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script src="assets/js/pagination.js"></script>
+   <!-- <script src="assets/js/pagination.js"></script>-->
     <script defer src="assets/js/all.js"></script> <!--load all styles -->
-  <!--  <link rel="stylesheet" type="text/css" href="assets/css/index.css" />-->
-    <script type="text/javascript" src="assets/js/overhang.min.js"></script>
+  <!--  <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
+    <script type="text/javascript" src="assets/js/overhang.min.js"></script>-->
     <script type="text/javascript" src="assets/js/prism.js"></script> 
-    <script type="text/javascript" src="assets/js/indexx.js"></script>  
+ <!--   <script type="text/javascript" src="assets/js/indexx.js"></script> -->
   </head>
-
  <!-- <body class="cover" style="background-image: url(././assets/img/login.jpg);" >-->
  <body>

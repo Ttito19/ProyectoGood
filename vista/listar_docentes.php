@@ -1,70 +1,58 @@
 <?php include 'partials/head.php';?>
-<?php
-/*
-if (isset($_SESSION["correo"])) {
-    if ($_SESSION["correo"]["tipo"] == 2) {
-        header("location:usuario.php");
-    }
-}else {
-   header("location:index.php");
-}
-if (isset($_SESSION["correo"])) {
-if(	$_SESSION["correo"]["tipo"] == 3){
-		    header("location:docente.php");
-		}
-}else{
-	    header("location:index.php");
-}*/
-?>
-
 <?php include 'partials/menu.php';?>
+
 <?php 
 include "../controlador/usuarioControlador.php";
 include '../helps/helps.php';
-$filas=usuarioControlador::getCliente();
+$filas=usuarioControlador::getDocente();
 ?>
-<div class="container">
 
-	<div class="col-md-auto ">	
-		</div>			
+<div class="container">
+      <br>
+			<div class="col-md-auto ">			
 				<a href="registroCliProf.php" class="btn btn-primary">Registrar Usuarios</a>
-				<br>
-        <br>	
-			<table class="table table-active ">
+			<br>
+			<br>
+			</div>
+			<table class="table" id="tabla" >
 				<thead>
-					<tr class="bg-warning">	
-						    <th scope="col">Codigo</th>	
-							  <th scope="col">Nombres</th>	
-							  <th scope="col">Apellidos</th>				
-						    <th scope="col">Correo</th>
-						    <th scope="col">Dni</th>
-						    <th scope="col">Celular</th>					
-						    <th scope="col">Registrador</th>		
-						    <th scope="col">Privilegio</th>	
-					      <th scope="col">Acciones</th>	
+					<tr class="table-warning" >	
+						    <td scope="col">Codigo</td>	
+							  <td scope="col">Nombres</td>	
+						   	<td scope="col">Apellidos</td>				
+						    <td scope="col">Correo</td>
+						    <td scope="col">Dni</td>
+						    <td scope="col">Celular</td>							   
+						    <td scope="col">Registrador</td>		
+						    <td scope="col">Privilegio</td>	
+						    <td scope="col">Acciones</td>	
+					
 					</tr>
 				</thead>
 				<tbody>
-				<?php foreach ($filas as $clientes ) {
+				<?php foreach ($filas as $docente ) {
 					?>
 				<tr>	
-				          <th><?php echo $clientes["idcliente"]?></th> 
-				          <th><?php echo $clientes["nomcli"]?></th> 
-	                <th><?php echo $clientes["apecli"]?></th>
-	                <th><?php echo $clientes["corcli"]?></th>
-	                <th><?php echo $clientes["dnicli"]?></th>
-	                <th><?php echo $clientes["celcli"]?></th>	          
-	                <th><?php echo $clientes["idempleado"]?></th>
-	                <th><?php echo getRol($clientes["tipo"])?></th>
+				    <td><?php echo $docente["idprofesor"]?></td> 
+				    <td><?php echo $docente["nompro"]?></td> 
+	                <td><?php echo $docente["apepro"]?></td>
+	                <td><?php echo $docente["corpro"]?></td>
+	                <td><?php echo $docente["dnipro"]?></td>
+	                <td><?php echo $docente["celpro"]?></td>	               
+	                <td><?php echo $docente["idempleado"]?></td>
+	                <td><?php echo getRol($docente["tipo"])?></td>
 	              	                			                  
-	                <th><a href="procesoUpdateCliente.php?idcliente=<?php echo $clientes["idcliente"]?>" class="btn btn-success btn-sn">Editar</a>  
-				        	<a href="javascript:prueba();" class="btn btn-danger btn-sn">Eliminar</a></th>
+	                <td>
+	             <a href="procesoUpdateDocente.php?idprofesor=<?php echo $docente["idprofesor"]?>" class="btn btn-success btn-sn">Editar</a>  
+								 <a href="javascript:prueba();" class="btn btn-danger btn-sn">Eliminar</a>
+									</td>
+					<!--javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'');-->
                 </tr>
 				<?php }?>
 							</tbody>
 						</table>
-				</div>
 			</div>
+		</div>
 </div><!-- /.container -->
 
 <script type="text/javascript">
@@ -77,6 +65,7 @@ $("body").overhang({
   type: "success",
   message: "Eliminado Correctamente"
 });
+
 	}else{
 		$("body").overhang({
   type: "error",
@@ -85,6 +74,7 @@ $("body").overhang({
 });
 	}
 }
+
 function prueba(){
 	$("body").overhang({
 		type: "confirm",
@@ -92,8 +82,9 @@ function prueba(){
   overlay: true,
   callback: function (value) {
     if (value) {
-		eliminar(true, "eliminar_usuarios_form.php?idcliente=<?php echo $clientes['idcliente']?>" )
+		eliminar(true, "eliminar_usuarios_form.php?idprofesor=<?php echo $docente['idprofesor']?>")
     } else {
+			
 		$("body").overhang({
   type: "error",
   message: "Operacion cancelada",
@@ -101,7 +92,28 @@ function prueba(){
 });
 	}
   }
-})
+});
 }
 </script>
+<!--
+<script type="text/javascript"     >  
+
+$('#table').pagination({
+    dataSource: [1, 2, 3,...15],
+    pageSize: 5,
+    autoHidePrevious: true,
+    autoHideNext: true,
+    callback: function(data, pagination) {
+        // template method of yourself
+        var html = template(data);
+        dataContainer.html(html);
+    }
+})
+
+</script>
+-->
+
+
+
+
 <?php include 'partials/footer.php';?>

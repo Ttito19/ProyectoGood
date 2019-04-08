@@ -1,5 +1,6 @@
-   <?php include 'partials/head.php';?>
-   <?php
+
+<?php include 'partials/head.php';?>
+ <?php
 /*
   if (isset($_SESSION["correo"])) {
       if ($_SESSION["correo"]["tipo"] == 2) {
@@ -29,8 +30,6 @@
                $correo   = usuarioControlador::getDocentPorId($id);
     }
     ?>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
     <div class="container">
 
       <div class="starter-template">
@@ -118,9 +117,7 @@
             </div>
           </div>
 
-        </div><!-- /.container -->
-        <script type="text/javascript" src="assets/js/index.js"></script>
-        <script src = "assets/js/select2.js"></script>
-       
+        </div><!-- /.container -->  
         <?php include 'partials/footer.php';?>
+        
 

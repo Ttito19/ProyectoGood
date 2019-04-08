@@ -1,19 +1,11 @@
-<!--<nav class="navbar navbar-light" style="background-color: #0C082B;">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-           
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand">Good Partner Consulting</a>
-        </div>
-      </div>
-    </nav>-->
 
-    <nav class="navbar navbar-expand-sm  navbar-dark" style="background-color:#0C082B;" >
-        <ul class="navbar-nav">
+    <nav class="navbar navbar-expand-lg  navbar-dark" style="background-color:#0C082B;" >
+    <a class="navbar-brand" href="#">Ttito19</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
             <a class="nav-link" href="#">Inicio</a>
           </li>
@@ -24,14 +16,15 @@
             <a class="nav-link" href="#">Contactos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">inhabilitado</a>
+            <a class="nav-link disabled" href="#">Inhabilitado</a>
           </li>
         </ul>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+      
         <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
         </form>    
+        </div>
       </nav>
 
 
