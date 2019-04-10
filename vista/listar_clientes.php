@@ -30,9 +30,9 @@ $filas=usuarioControlador::getCliente();
 			<br>
 			<br>
 			</div>	
-			<table class="table" id="table" >
+			<table class="table table-bordered table-active" id="table" >
 				<thead>
-					<tr class="table-warning">	
+					<tr class="table-info">	
 					<td scope="col">Codigo</td>
 					<td scope="col">Nombres</td>
 					<td scope="col">Apellidos</td>

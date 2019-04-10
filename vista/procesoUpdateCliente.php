@@ -34,12 +34,8 @@ if(isset($_GET["idcliente"])){
 
 
 <div class="container">
-
-  <div class="starter-template">
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <div class="panel panel-default">
-          <div class="panel-body">
+    <div class="form-row">
+      <div class="col-sm-4  offset-sm-4 justify-content-center">
             <form action="updateUsuarioCliente.php" method="POST">
 
              <?php if (($correo)) {?>
@@ -53,48 +49,42 @@ if(isset($_GET["idcliente"])){
                 <label>Nombre </label>
                 <input type="text" placeholder="Introduce tu nombre..." required class="form-control" name="nom" value="<?php echo is_null($correo) ? "" : $correo->getNombre() ?>">
               </div>
-             <div class="form-group">
-                <labe>Apellidos </label>
-                  <input type="text" placeholder="Introduce tus apellidos..." required class="form-control" name="ape" value="<?php echo is_null($correo) ? "" : $correo->getApellido() ?>">
-                </div>
 
-               <div class="form-group">
+              <div class="form-group">
+                <label>Apellidos </label>
+                  <input type="text" placeholder="Introduce tus apellidos..." required class="form-control" name="ape" value="<?php echo is_null($correo) ? "" : $correo->getApellido() ?>">
+              </div>
+
+              <div class="form-group">
                   <label>Correo </label>
                   <input type="email" placeholder="Introduce tu email..." required class="form-control" name="cor" value="<?php echo is_null($correo) ? "" : $correo->getCorreo() ?>">
-                </div>   
+              </div>   
                
                 <script>
                   function valida(e){tecla = (document.all) ? e.keyCode : e.which;if (tecla==8){return true;}patron =/[0-9]/;tecla_final = String.fromCharCode(tecla);return patron.test(tecla_final);}
                 </script> 
 
-                  <div class="form-group">
-                  <labe>Dni</label>
+              <div class="form-group">
+                  <label>Dni</label>
                     <input type="text"  maxlength="8" onkeypress="return valida(event)"  placeholder="Introduce tu dni..." required class="form-control" name="dni" required="" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" value="<?php echo is_null($correo) ? "" : $correo->getDni() ?>">
-                  </div>
+              </div>
 
-                    <div class="form-group">
+              <div class="form-group">
                     <label>Celular </label>
                     <input type="text" maxlength="9" onkeypress="return valida(event)" placeholder="Introduce el celular..." required class="form-control" name="cel" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" value="<?php echo is_null($correo) ? "" : $correo->getCelular() ?>">
-                  </div>
+              </div>
 
 
-                  <div class="form-group">
+              <div class="form-group">
                     <label>Contraseña </label>
                     <input type="password" placeholder="Introduce tu contraseña..." required class="form-control" name="contra">
-                  </div> 
+              </div> 
 
                  <button type="submit" class="btn btn-success">Editar</button>
+                 <a href="listar_clientes.php" class="btn btn-danger" >Cancelar </a>
                 </form>
-
-
-              </div>
-            </div>
-          </div>
         </div>
       </div>
-
     </div><!-- /.container -->
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-  </script>
-  <script type="text/javascript" src="assets/js/index.js"></script>
+    <?php include 'partials/footer.php';?>

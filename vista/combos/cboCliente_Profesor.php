@@ -8,7 +8,7 @@ function getListasRep(){
   $result = $mysqli->query($query);
  // $listas = '<option value="0">Elige un Cargo</option>';
   while($row = $result->fetch_array(MYSQLI_ASSOC)){
-    $listas .= "<option value='$row[idtipo]'>$row[nomtipo]</option>";
+    $listas .= "<option value='$row[tipo]'>$row[nomtipo]</option>";
   }
   return $listas;
   //SUBIENDO sdad

@@ -14,9 +14,9 @@ $filas=usuarioControlador::getDocente();
 			<br>
 			<br>
 			</div>
-			<table class="table" id="tabla" >
+			<table class="table table-bordered table-active" id="tabla" >
 				<thead>
-					<tr class="table-warning" >	
+					<tr class="table-info" >	
 						    <td scope="col">Codigo</td>	
 							  <td scope="col">Nombres</td>	
 						   	<td scope="col">Apellidos</td>				
